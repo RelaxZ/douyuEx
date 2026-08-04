@@ -1,3 +1,5 @@
+let exAutoBarrageColorTimer = null;
+
 function initPkg_ExpandTool_AutoBarrageColor() {
     ExpandTool_AutoBarrageColor_insertDom();
     ExpandTool_AutoBarrageColor_insertFunc();
@@ -58,18 +60,18 @@ function initPkg_ExpandTool_AutoBarrageColor_Set() {
 
 function selectHighestUnlockedBarrageColor() {
     // 避免重复进房/重复勾选时叠多个定时器
-    if (window.__exAutoBarrageColorTimer) {
-        clearInterval(window.__exAutoBarrageColorTimer);
-        window.__exAutoBarrageColorTimer = null;
+    if (exAutoBarrageColorTimer) {
+        clearInterval(exAutoBarrageColorTimer);
+        exAutoBarrageColorTimer = null;
     }
 
     let count = 0;
     let opened = false;
-    window.__exAutoBarrageColorTimer = setInterval(() => {
+    exAutoBarrageColorTimer = setInterval(() => {
         count++;
         if (count > 100) {
-            clearInterval(window.__exAutoBarrageColorTimer);
-            window.__exAutoBarrageColorTimer = null;
+            clearInterval(exAutoBarrageColorTimer);
+            exAutoBarrageColorTimer = null;
             return;
         }
 
@@ -108,8 +110,8 @@ function selectHighestUnlockedBarrageColor() {
             return;
         }
 
-        clearInterval(window.__exAutoBarrageColorTimer);
-        window.__exAutoBarrageColorTimer = null;
+        clearInterval(exAutoBarrageColorTimer);
+        exAutoBarrageColorTimer = null;
         lastUnlocked.click();
     }, 500);
 }
