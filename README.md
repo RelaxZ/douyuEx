@@ -1,3 +1,6 @@
+> [!CAUTION]
+> **因斗鱼要求，2026-8-7起，DouyuEx 插件将无限期停止更新与发布，并关闭所有下载渠道。**
+
 <p align="center">
     <a href="https://github.com/qianjiachun/douyuEx">
         <img src="https://s4.ax1x.com/2021/12/23/TGMxk8.png" width="150" height="150"/>

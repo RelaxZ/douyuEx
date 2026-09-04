@@ -1,4 +1,5 @@
 node_modules
+dist
 ./component
 rules.txt
 更新步骤.txt
